@@ -1,0 +1,13 @@
+import * as SC from "./LogoStyled"
+
+import logoIcon from "../../assets/images/Logo mark.svg"
+const Logo = () => {
+    return ( 
+        <div>
+            <img src={logoIcon} alt="logo" />
+            <h2>Character Counter</h2>
+        </div>
+     );
+}
+ 
+export default Logo;

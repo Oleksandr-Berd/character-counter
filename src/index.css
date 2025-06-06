@@ -1,8 +1,8 @@
 
-/* @font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins-Bold.ttf") format("truetype");
-} */
+@font-face {
+  font-family: "DM Sans";
+  src: url("./assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf") format("truetype");
+}
 
 *,
 *::before,
@@ -14,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
 
- font-family: sans-serif;
+ font-family:"DM Sans", sans-serif;
 }
 
 ul, ol,
