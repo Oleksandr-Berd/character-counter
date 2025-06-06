@@ -26,19 +26,19 @@ function App() {
   };
 
   const handleText = (currentText) => {
+    const { text, excludeSpaces, limit } = currentText;
 
-    const {text, excludeSpaces, limit} = currentText
-    
-    console.log(text);
-    
-    setScrutinizingText({text, excludeSpaces, limit})
+    setScrutinizingText({ text, excludeSpaces, limit });
   };
 
   return (
     <ThemeProvider theme={commonTheme}>
       <div>
         <Header toggleTheme={toggleTheme} />
-        <MainLayout handleText={handleText} scrutinizingText={scrutinizingText}/>
+        <MainLayout
+          handleText={handleText}
+          scrutinizingText={scrutinizingText}
+        />
       </div>
     </ThemeProvider>
   );

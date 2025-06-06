@@ -1,16 +1,34 @@
 export const handleData = (data) => {
+  const { text, excludeSpaces } = data || {};
 
-    const {text, limit, excludeSpaces} = data || {}
+  let arrayCharacters = [];
+  let result = {};
 
-let array
+  if (text && excludeSpaces) {
+    arrayCharacters = [...text];
 
-if (text) array=[...text]
+    const excludeSpacesArray = arrayCharacters.filter((el) => el === " ");
 
-const result = {
-totalCharacters: array.length    
-}
+    const words = text.split(" ");
+    const sentences = text.split(".").filter((el) => el !== "");
 
-console.log(array);
+    result = {
+      totalCharacters: excludeSpacesArray.length,
+      totalWords: words.length,
+      totalSentences: sentences.length,
+    };
+  } else if (text && !excludeSpaces) {
+    arrayCharacters = [...text];
 
+    const words = text.split(" ");
+    const sentences = text.split(".").filter((el) => el !== "");
 
-}
+    result = {
+      totalCharacters: arrayCharacters.length,
+      totalWords: words.length,
+      totalSentences: sentences.length,
+    };
+  }
+
+  return result;
+};
