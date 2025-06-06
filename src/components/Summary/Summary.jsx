@@ -1,16 +1,22 @@
 import * as SC from "./SummaryStyled";
 
-import { dbSummary } from "../../db/dbSummary/js";
+const Summary = ({summaryData}) => {
+  const { totalCharacters, totalWords, totalSentences } = summaryData || {};
 
-import SummaryItem from "./SummaryItem/SummaryItem";
-
-const Summary = () => {
   return (
     <ul>
-      {dbSummary &&
-        dbSummary.map((el) => (
-          <SummaryItem key={el.id} title={el.title} amount={el.amount} />
-        ))}
+      <li>
+        <p>{totalCharacters ? totalCharacters : "00"}</p>
+        <h3>Total Characters</h3>
+      </li>
+      <li>
+        <p>{totalWords ? totalWords : "00"}</p>
+        <h3>Word Count</h3>
+      </li>
+      <li>
+        <p>{totalSentences ? totalSentences : "00"} </p>
+        <h3>Sentence Count</h3>
+      </li>
     </ul>
   );
 };

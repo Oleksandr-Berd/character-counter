@@ -7,9 +7,9 @@ export const handleData = (data) => {
   if (text && excludeSpaces) {
     arrayCharacters = [...text];
 
-    const excludeSpacesArray = arrayCharacters.filter((el) => el === " ");
+    const excludeSpacesArray = arrayCharacters.filter((el) => el !== " ");
 
-    const words = text.split(" ");
+    const words = text.split(" ").filter((el) => el !== "");
     const sentences = text.split(".").filter((el) => el !== "");
 
     result = {

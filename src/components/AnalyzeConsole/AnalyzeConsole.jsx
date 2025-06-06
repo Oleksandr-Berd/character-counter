@@ -37,7 +37,7 @@ const AnalyzeConsole = ({handleText}) => {
                 </label>
                 <label htmlFor="limit">
                   <Field type="checkbox" name="limit" id="limit"/>
-                  Exclude Spaces
+                  Set Character Limit
                 </label>
               </div>
               <div>

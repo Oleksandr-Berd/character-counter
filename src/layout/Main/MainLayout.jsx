@@ -18,13 +18,10 @@ const handleSummarize = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scrutinizingText]);
 
-console.log(summaryData);
-
-
   return (
     <main>
       <AnalyzeConsole handleText={handleText} />
-      <Summary />
+      <Summary summaryData={summaryData}/>
       <LetterDensity />
     </main>
   );
