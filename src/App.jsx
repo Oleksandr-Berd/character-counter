@@ -7,6 +7,7 @@ import { darkTheme } from "./styled/darkTheme";
 import { lightTheme } from "./styled/lightTheme";
 
 import Header from "./layout/Header/Header";
+import Main from "./layout/Main/Main";
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -17,6 +18,7 @@ function App() {
     <ThemeProvider theme={commonTheme}>
       <div>
         <Header/>
+        <Main/>
       </div>
     </ThemeProvider>
   );

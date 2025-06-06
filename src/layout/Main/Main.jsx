@@ -1,10 +1,11 @@
-import * as SC from "./MainStyled"
-const margin = () => {
-    return ( 
-        <main>
+import AnalyzeConsole from "../../components/AnalyzeConsole/AnalyzeConsole";
+import * as SC from "./MainStyled";
+const Main = () => {
+  return (
+    <main>
+      <AnalyzeConsole />
+    </main>
+  );
+};
 
-        </main>
-     );
-}
- 
-export default margin;
+export default Main;
