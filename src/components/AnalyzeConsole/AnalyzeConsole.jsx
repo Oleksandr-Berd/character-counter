@@ -1,6 +1,8 @@
 import { Field, Form, Formik } from "formik";
 import * as SC from "./AnalyzeConsoleStyled";
-const AnalyzeConsole = () => {
+import { timeGauge } from "../../utils/timeGauge";
+import FormObserver from "../../utils/FormObserver";
+const AnalyzeConsole = ({handleText}) => {
   return (
     <div>
       <h3>Analyze your text in real-time.</h3>
@@ -15,8 +17,9 @@ const AnalyzeConsole = () => {
           setSubmitting(false);
         }}
       >
-        {() => (
+        {({values}) => (
           <Form>
+            <FormObserver onChange={handleText}/>
             <label htmlFor="text">
               <Field
                 as="textarea"
@@ -28,17 +31,17 @@ const AnalyzeConsole = () => {
             </label>
             <div>
               <div>
-                <label htmlFor="settings">
-                  <Field type="checkbox" name="excludeSpaces" />
+                <label htmlFor="excludeSpaces">
+                  <Field type="checkbox" name="excludeSpaces" id="excludeSpaces"/>
                   Exclude Spaces
                 </label>
-                <label htmlFor="settings">
-                  <Field type="checkbox" name="limit" />
+                <label htmlFor="limit">
+                  <Field type="checkbox" name="limit" id="limit"/>
                   Exclude Spaces
                 </label>
               </div>
               <div>
-                <p>Approx. reading time: </p>
+                <p>Approx. reading time: {timeGauge(values.text)}</p>
               </div>
             </div>
           </Form>

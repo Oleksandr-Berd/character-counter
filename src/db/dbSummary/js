@@ -1,5 +1,6 @@
 export const dbSummary = [
   {
+    id:"1",
     title: "Total Characters",
     amount: "00",
   },

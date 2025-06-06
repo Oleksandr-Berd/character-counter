@@ -2,7 +2,7 @@ const SummaryItem = (props) => {
   const { title, amount } = props;
 
   return (
-    <li>
+    <li >
       <p>{amount}</p>
       <h4>{title}</h4>
     </li>
