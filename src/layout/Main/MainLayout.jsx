@@ -8,10 +8,13 @@ const MainLayout = (props) => {
   const { handleText, scrutinizingText } = props;
   const [summaryData, setSummaryData] = useState(null);
 
+const {limit} = scrutinizingText || {}
 
 const handleSummarize = () => {
   setSummaryData(handleData(scrutinizingText))
 }
+
+
 
   useEffect(() => {
     handleSummarize()
@@ -20,7 +23,7 @@ const handleSummarize = () => {
 
   return (
     <main>
-      <AnalyzeConsole handleText={handleText} />
+      <AnalyzeConsole handleText={handleText} limit={limit}/>
       <Summary summaryData={summaryData}/>
       <LetterDensity />
     </main>
