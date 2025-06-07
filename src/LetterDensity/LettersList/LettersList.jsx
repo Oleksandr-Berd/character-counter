@@ -8,6 +8,8 @@ import { handleRatio } from "../../utils/handleRatio";
 
 const LettersList = ({statsLetters, totalCharacters}) => {
 
+    
+    
     return ( 
         <ul>
         {statsLetters && statsLetters.map(({letter, count}) => <Letters key={nanoid()} letter={letter} repeat={count} ratio={handleRatio(count, totalCharacters)}/>)}
