@@ -4,29 +4,30 @@ export const handleData = (data) => {
   let arrayCharacters = [];
   let result = {};
 
+  if (text) arrayCharacters = [...text.toLowerCase()];
+  const excludeSpacesArray = arrayCharacters.filter(
+    (el) => ![" ", ",", "-", "?", "!", ":", ";", "."].includes(el)
+  );
+
+  const sentences = text?.split(/[.!?]/).filter((el) => el !== "");
+
   if (text && excludeSpaces) {
-    arrayCharacters = [...text];
-
-    const excludeSpacesArray = arrayCharacters.filter((el) => el !== " ");
-
     const words = text.split(" ").filter((el) => el !== "");
-    const sentences = text.split(".").filter((el) => el !== "");
 
     result = {
       totalCharacters: excludeSpacesArray.length,
       totalWords: words.length,
       totalSentences: sentences.length,
+      letters: excludeSpacesArray,
     };
   } else if (text && !excludeSpaces) {
-    arrayCharacters = [...text];
-
     const words = text.split(" ");
-    const sentences = text.split(".").filter((el) => el !== "");
 
     result = {
       totalCharacters: arrayCharacters.length,
       totalWords: words.length,
       totalSentences: sentences.length,
+      letters: excludeSpacesArray,
     };
   }
 

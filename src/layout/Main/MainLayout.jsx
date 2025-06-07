@@ -25,7 +25,7 @@ const handleSummarize = () => {
     <main>
       <AnalyzeConsole handleText={handleText} limit={limit}/>
       <Summary summaryData={summaryData}/>
-      <LetterDensity />
+      <LetterDensity summaryData={summaryData}/>
     </main>
   );
 };

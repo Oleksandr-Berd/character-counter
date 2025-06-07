@@ -1,12 +1,14 @@
 import * as SC from "./LettersStyled";
 
-const Letters = ({ letter }) => {
-  return (
+const Letters = ({ letter, repeat, ratio }) => {
+  
+  const stat = `${repeat} (${ratio})`
+  
+    return (
     <li>
       <p>{letter}</p>
       <div></div>
-      <p></p>
-      <button type="button">See more</button>
+      <p>{stat}</p>
     </li>
   );
 };

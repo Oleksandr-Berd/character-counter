@@ -1,15 +1,27 @@
+import { useEffect, useState } from "react";
+
 import * as SC from "./LetterDensityStyled";
 
-import { alphabet } from "../utils/alphabet";
-import { nanoid } from "nanoid";
-import Letters from "./Letters/Letters";
-const LetterDensity = () => {
+import { handleLetters } from "../utils/handleLetters";
+import LettersList from "./LettersList/LettersList";
+const LetterDensity = ({ summaryData }) => {
+  const [statsLetters, setStatsLetters] = useState(null);
+
+  const { letters, totalCharacters } = summaryData || {};
+
+  const handleStatsLetters = () => {
+    setStatsLetters(handleLetters(letters));
+  };
+
+  useEffect(() => {
+    handleStatsLetters();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [summaryData]);
+
   return (
     <div>
-      <ul>
-        {alphabet &&
-          alphabet.map((el) => <Letters key={nanoid()} letter={el} />)}
-      </ul>
+      <LettersList statsLetters={statsLetters} totalCharacters={totalCharacters}/>
+      <button type="button">See more</button>
     </div>
   );
 };

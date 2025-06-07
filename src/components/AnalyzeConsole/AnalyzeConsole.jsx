@@ -5,10 +5,12 @@ import * as SC from "./AnalyzeConsoleStyled";
 
 import { timeGauge } from "../../utils/timeGauge";
 import FormObserver from "../../utils/FormObserver";
-import ErrorCon from "../ErrorCon/ErrorCon";
 
 const validationSchema = Yup.object().shape({
-  text: Yup.string().max(13, "Limit reached! Your text exceeds 300 characters."),
+  text: Yup.string().max(
+    13,
+    "Limit reached! Your text exceeds 300 characters."
+  ),
 });
 const AnalyzeConsole = ({ handleText, limit }) => {
   return (
@@ -37,13 +39,13 @@ const AnalyzeConsole = ({ handleText, limit }) => {
                 rows="7"
                 placeholder="Start typing here… (or paste your text)"
                 style={
-                  errors.text 
+                  errors.text
                     ? { border: "1px solid #ff0000" }
                     : { border: "1px solid #ccc" }
                 }
                 disabled={errors.text ? true : false}
               />
-              {errors.text ? <ErrorMessage name="text"/> : null}
+              {errors.text ? <ErrorMessage name="text" /> : null}
             </label>
             <div>
               <div>
