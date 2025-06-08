@@ -3,6 +3,7 @@ export const darkTheme = {
     bg: "#12131A",
     title: "#F2F2F7",
     content: "#E4E4EF",
+    scale:"#21222C"
   },
 
   weight: {
