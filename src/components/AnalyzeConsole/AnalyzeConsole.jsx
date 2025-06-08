@@ -10,7 +10,7 @@ import FormObserver from "../../utils/FormObserver";
 
 const validationSchema = Yup.object().shape({
   text: Yup.string().max(
-    13,
+    300,
     "Limit reached! Your text exceeds 300 characters."
   ),
 });
@@ -37,7 +37,7 @@ const AnalyzeConsole = ({ handleText, limit }) => {
         {({ values, errors }) => (
           <Form>
             <FormObserver onChange={handleText} />
-            <label htmlFor="text">
+            <label htmlFor="text" style={{position:"relative"}}>
               <SC.TextareaStyled
                 as="textarea"
                 id="text"
@@ -53,7 +53,7 @@ const AnalyzeConsole = ({ handleText, limit }) => {
               />
               <SC.ErrorStyled  >
                 <img src={infoIcon} alt="info" style={!errors.text ? { display: "none" } : {}}/>
-                <ErrorMessage name="text" />
+                <p>{errors.text}</p>
               </SC.ErrorStyled>
             </label>
             <SC.SettingsCon>

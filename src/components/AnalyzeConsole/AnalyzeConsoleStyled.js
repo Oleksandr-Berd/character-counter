@@ -64,6 +64,17 @@ export const CheckStyled = styled(Field)`
 `;
 
 export const ErrorStyled = styled.div`
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  transform: translate(4px, -4px);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
   text-align: left;
 
   font-size: 12px;
@@ -71,11 +82,11 @@ export const ErrorStyled = styled.div`
 
   color: #da3701;
 
-  & > img{
-    &.no-icon > img{
-        display: none;
+  & > img {
+    margin-right: 8px;
+
+    &.no-icon > img {
+      display: none;
     }
   }
 `;
-
-
