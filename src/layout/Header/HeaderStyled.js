@@ -6,6 +6,8 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 
+margin-bottom: 40px;
+
 padding-top: 20px;
 padding-bottom: 20px;
 `

@@ -14,8 +14,8 @@ const validationSchema = Yup.object().shape({
 });
 const AnalyzeConsole = ({ handleText, limit }) => {
   return (
-    <div>
-      <h3>Analyze your text in real-time.</h3>
+    <SC.AnalyzeConsoleStyled>
+      <SC.ConsoleTitleStyled>Analyze your text in real-time.</SC.ConsoleTitleStyled>
       <Formik
         initialValues={{
           text: "",
@@ -32,7 +32,7 @@ const AnalyzeConsole = ({ handleText, limit }) => {
           <Form>
             <FormObserver onChange={handleText} />
             <label htmlFor="text">
-              <Field
+              <SC.TextareaStyled
                 as="textarea"
                 id="text"
                 name="text"
@@ -47,10 +47,10 @@ const AnalyzeConsole = ({ handleText, limit }) => {
               />
               {errors.text ? <ErrorMessage name="text" /> : null}
             </label>
-            <div>
-              <div>
+            <SC.SettingsCon>
+              <SC.SettingsStyled>
                 <label htmlFor="excludeSpaces">
-                  <Field
+                  <SC.CheckStyled
                     type="checkbox"
                     name="excludeSpaces"
                     id="excludeSpaces"
@@ -58,18 +58,18 @@ const AnalyzeConsole = ({ handleText, limit }) => {
                   Exclude Spaces
                 </label>
                 <label htmlFor="limit">
-                  <Field type="checkbox" name="limit" id="limit" />
+                  <SC.CheckStyled type="checkbox" name="limit" id="limit" />
                   Set Character Limit
                 </label>
-              </div>
+              </SC.SettingsStyled>
               <div>
                 <p>Approx. reading time: {timeGauge(values.text)}</p>
               </div>
-            </div>
+            </SC.SettingsCon>
           </Form>
         )}
       </Formik>
-    </div>
+    </SC.AnalyzeConsoleStyled>
   );
 };
 
