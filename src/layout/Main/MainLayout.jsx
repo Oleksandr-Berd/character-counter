@@ -22,11 +22,11 @@ const handleSummarize = () => {
   }, [scrutinizingText]);
 
   return (
-    <main>
+    <div>
       <AnalyzeConsole handleText={handleText} limit={limit}/>
       <Summary summaryData={summaryData}/>
       <LetterDensity summaryData={summaryData}/>
-    </main>
+    </div>
   );
 };
 

@@ -4,20 +4,20 @@ const Summary = ({summaryData}) => {
   const { totalCharacters, totalWords, totalSentences } = summaryData || {};
 
   return (
-    <ul>
+    <SC.SummaryStyled>
       <li>
-        <p>{totalCharacters ? totalCharacters : "00"}</p>
-        <h3>Total Characters</h3>
+        <SC.ResultStyled>{totalCharacters ? totalCharacters : "00"}</SC.ResultStyled>
+        <SC.SubTitleStyled>Total Characters</SC.SubTitleStyled>
       </li>
       <li>
-        <p>{totalWords ? totalWords : "00"}</p>
-        <h3>Word Count</h3>
+        <SC.ResultStyled>{totalWords ? totalWords : "00"}</SC.ResultStyled>
+        <SC.SubTitleStyled>Word Count</SC.SubTitleStyled>
       </li>
       <li>
-        <p>{totalSentences ? totalSentences : "00"} </p>
-        <h3>Sentence Count</h3>
+        <SC.ResultStyled>{totalSentences ? totalSentences : "00"} </SC.ResultStyled>
+        <SC.SubTitleStyled>Sentence Count</SC.SubTitleStyled>
       </li>
-    </ul>
+    </SC.SummaryStyled>
   );
 };
 
