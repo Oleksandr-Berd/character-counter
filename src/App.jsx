@@ -33,13 +33,13 @@ function App() {
 
   return (
     <ThemeProvider theme={commonTheme}>
-      <div>
+      <SC.AppStyled>
         <Header toggleTheme={toggleTheme} />
         <MainLayout
           handleText={handleText}
           scrutinizingText={scrutinizingText}
         />
-      </div>
+      </SC.AppStyled>
     </ThemeProvider>
   );
 }

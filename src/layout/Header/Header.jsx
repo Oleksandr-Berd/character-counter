@@ -1,18 +1,15 @@
+import * as SC from "./HeaderStyled";
+
 import Logo from "../../components/Logo/Logo";
 import ThemeToggleBtn from "../../components/ThemeToggleBtn/ThemeToggleBtn";
-import * as SC from "./HeaderStyled"
 
-const Header = ({toggleTheme}) => {
-    
-    
-    
+const Header = ({ toggleTheme }) => {
+  return (
+    <SC.HeaderStyled>
+      <Logo />
+      <ThemeToggleBtn toggleTheme={toggleTheme} />
+    </SC.HeaderStyled>
+  );
+};
 
-    return ( 
-        <header>
-            <Logo/>
-            <ThemeToggleBtn toggleTheme={toggleTheme}/>
-        </header>
-     );
-}
- 
 export default Header;

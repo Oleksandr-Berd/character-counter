@@ -4,9 +4,9 @@ import * as SC from "./ThemeToggleBtnStyled"
 import moonIcon from "../../assets/images/icon-moon.svg"
 const ThemeToggleBtn = ({toggleTheme}) => {
     return ( 
-        <button type="button" onClick={toggleTheme}>
+        <SC.ThemeToggleBtnStyled type="button" onClick={toggleTheme}>
             <img src={moonIcon} alt="moon-icon" />
-        </button>
+        </SC.ThemeToggleBtnStyled>
      );
 }
  
