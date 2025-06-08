@@ -37,7 +37,8 @@ const LetterDensity = ({ summaryData }) => {
   }, [statsLetters]);
 
   return (
-    <div>
+    <SC.LetterDensityStyled>
+        <h3>Letter Density</h3>
       {totalCharacters ? (
         <>
           <LettersList
@@ -49,9 +50,9 @@ const LetterDensity = ({ summaryData }) => {
           </SC.ToggleCutBtnStyled>
         </>
       ) : (
-        <p>{zeroOption}</p>
+        <SC.ZeroOption>{zeroOption}</SC.ZeroOption>
       )}
-    </div>
+    </SC.LetterDensityStyled>
   );
 };
 

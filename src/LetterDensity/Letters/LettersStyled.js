@@ -6,6 +6,9 @@ export const LettersStyled = styled.li`
   align-items: center;
 
   justify-content: space-between;
+
+  color: ${({theme}) => theme.colors.content};
+
 `;
 
 export const Scale = styled.div`
@@ -38,6 +41,7 @@ export const LetterTitleStyled = styled.p`
   width: 16px;
 
   margin-right: 12px;
+
 `;
 
 export const StatsStyled = styled.p`

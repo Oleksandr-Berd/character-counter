@@ -15,6 +15,10 @@ export const ConsoleTitleStyled = styled.h3`
   font-weight: ${({ theme }) => theme.weight.bold};
 
   color: ${({ theme }) => theme.colors.title};
+
+  @media (min-width: 768px) {
+    font-size: 64px;
+  }
 `;
 
 export const TextareaStyled = styled(Field)`
@@ -31,10 +35,17 @@ export const TextareaStyled = styled(Field)`
   line-height: 1.4;
   letter-spacing: 0.6px;
 
-  color: ${({ theme }) => theme.colors.content};
+  color: #2A2B37;
   background-color: #e4e4ef;
 
   border-radius: 12px;
+
+  @media (min-width: 768px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `;
 
 export const SettingsCon = styled.div`
@@ -46,20 +57,40 @@ export const SettingsCon = styled.div`
   letter-spacing: -0.6px;
 
   color: ${({ theme }) => theme.colors.content};
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 
 export const SettingsStyled = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   margin-bottom: 12px;
 
   & > label:not(:last-of-type) {
     margin-bottom: 12px;
   }
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & > label:not(:last-of-type) {
+      margin-bottom: 0;
+      margin-right: 8px;
+    }
+  }
 `;
 
 export const CheckStyled = styled(Field)`
+  margin-bottom: 0;
   margin-right: 12px;
 `;
 

@@ -1,26 +1,31 @@
 import styled from "@emotion/styled";
 
-import cutIcon from "../assets/images/cutIcon.png"
+import cutIcon from "../assets/images/cutIcon.png";
 
 export const LetterDensityStyled = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
-`
+
+  & > h3 {
+    margin-bottom: 20px;
+
+    font-size: 24px;
+    font-weight: ${({ theme }) => theme.weight.semiBold};
+
+    color: ${({theme}) => theme.colors.title};
+  }
+`;
 
 export const ToggleCutBtnStyled = styled.button`
+  align-content: center;
 
-align-content: center;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.6;
+  font-weight: ${({ theme }) => theme.weight.regular};
 
-font-size: 20px;
-line-height: 1.4;
-letter-spacing: -0.6;
-font-weight: ${({theme})=> theme.weight.regular};
+  color: ${({ theme }) => theme.colors.content};
+  background-color: transparent;
 
-color: ${({theme})=> theme.colors.content};
-background-color: transparent;
-
-&::after {
+  &::after {
     content: "";
     display: inline-block;
     width: 12px;
@@ -30,6 +35,11 @@ background-color: transparent;
     background-repeat: no-repeat;
     margin-left: 8px;
 
-    transform: ${({isCutList}) => !isCutList ? "rotate(180deg)" : null}  ;
+    transform: ${({ isCutList }) => (!isCutList ? "rotate(180deg)" : null)};
   }
+`;
+
+
+export const ZeroOption = styled.p`
+color: ${({theme})=> theme.colors.content};
 `
