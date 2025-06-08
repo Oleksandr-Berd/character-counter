@@ -32,33 +32,50 @@ export const TextareaStyled = styled(Field)`
   letter-spacing: 0.6px;
 
   color: ${({ theme }) => theme.colors.content};
-  background-color: #E4E4EF;
+  background-color: #e4e4ef;
 
   border-radius: 12px;
 `;
 
 export const SettingsCon = styled.div`
-text-align: left;
+  text-align: left;
 
-font-size: 16px;
-font-weight: ${({theme}) => theme.weight.regular};
-line-height: 1.3;
-letter-spacing: -0.6px;
+  font-size: 16px;
+  font-weight: ${({ theme }) => theme.weight.regular};
+  line-height: 1.3;
+  letter-spacing: -0.6px;
 
-color: ${({theme})=> theme.colors.content};
-`
+  color: ${({ theme }) => theme.colors.content};
+`;
 
 export const SettingsStyled = styled.div`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-margin-bottom: 12px;
+  margin-bottom: 12px;
 
-& > label:not(:last-of-type){
+  & > label:not(:last-of-type) {
     margin-bottom: 12px;
-}
-`
+  }
+`;
 
 export const CheckStyled = styled(Field)`
-margin-right: 12px;
-`
+  margin-right: 12px;
+`;
+
+export const ErrorStyled = styled.div`
+  text-align: left;
+
+  font-size: 12px;
+  font-weight: ${({ theme }) => theme.weight.light};
+
+  color: #da3701;
+
+  & > img{
+    &.no-icon > img{
+        display: none;
+    }
+  }
+`;
+
+

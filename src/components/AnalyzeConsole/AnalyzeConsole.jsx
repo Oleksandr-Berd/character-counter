@@ -3,6 +3,8 @@ import * as Yup from "yup";
 
 import * as SC from "./AnalyzeConsoleStyled";
 
+import infoIcon from "../../assets/images/icon-info.svg"
+
 import { timeGauge } from "../../utils/timeGauge";
 import FormObserver from "../../utils/FormObserver";
 
@@ -12,10 +14,14 @@ const validationSchema = Yup.object().shape({
     "Limit reached! Your text exceeds 300 characters."
   ),
 });
+
+const FormikErrorMessage = (props) => <ErrorText {...props} />;
 const AnalyzeConsole = ({ handleText, limit }) => {
   return (
     <SC.AnalyzeConsoleStyled>
-      <SC.ConsoleTitleStyled>Analyze your text in real-time.</SC.ConsoleTitleStyled>
+      <SC.ConsoleTitleStyled>
+        Analyze your text in real-time.
+      </SC.ConsoleTitleStyled>
       <Formik
         initialValues={{
           text: "",
@@ -45,7 +51,10 @@ const AnalyzeConsole = ({ handleText, limit }) => {
                 }
                 disabled={errors.text ? true : false}
               />
-              {errors.text ? <ErrorMessage name="text" /> : null}
+              <SC.ErrorStyled  >
+                <img src={infoIcon} alt="info" style={!errors.text ? { display: "none" } : {}}/>
+                <ErrorMessage name="text" />
+              </SC.ErrorStyled>
             </label>
             <SC.SettingsCon>
               <SC.SettingsStyled>
