@@ -44,9 +44,9 @@ const LetterDensity = ({ summaryData }) => {
             statsLetters={isCutList ? cutList : statsLetters}
             totalCharacters={totalCharacters}
           />
-          <button type="button" onClick={toggleCut}>
+          <SC.ToggleCutBtnStyled type="button" onClick={toggleCut} isCutList={isCutList}>
             {isCutList ?  on  :  off }
-          </button>
+          </SC.ToggleCutBtnStyled>
         </>
       ) : (
         <p>{zeroOption}</p>
