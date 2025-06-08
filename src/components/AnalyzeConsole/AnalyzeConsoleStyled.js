@@ -5,6 +5,10 @@ export const AnalyzeConsoleStyled = styled.div`
   margin-bottom: 40px;
 
   text-align: center;
+
+  @media (min-width: 1280px){
+    margin-bottom: 48px;
+  }
 `;
 
 export const ConsoleTitleStyled = styled.h3`
@@ -18,6 +22,10 @@ export const ConsoleTitleStyled = styled.h3`
 
   @media (min-width: 768px) {
     font-size: 64px;
+  }
+
+  @media (min-width: 1280px){
+    margin-bottom: 48px;
   }
 `;
 

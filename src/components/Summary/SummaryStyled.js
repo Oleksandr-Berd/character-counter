@@ -34,6 +34,10 @@ export const SummaryStyled = styled.ul`
 
       text-align: left;
     }
+
+    @media (min-width: 1280px) {
+      width: 316px;
+    }
   }
 
   & > li:not(:last-of-type) {
@@ -90,13 +94,11 @@ export const SummaryStyled = styled.ul`
       content: "";
 
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' fill='none' viewBox='0 0 150 150'%3E%3Cg clip-path='url(%23a)'%3E%3Cmask id='b' width='150' height='150' x='0' y='0' maskUnits='userSpaceOnUse' style='mask-type:luminance'%3E%3Cpath fill='%23fff' d='M150 0H0v150h150V0Z'/%3E%3C/mask%3E%3Cg mask='url(%23b)'%3E%3Cpath fill='%23FFB844' fill-rule='evenodd' d='M0 0h50v50H0V0Zm100 50H50v50H0v50h50v-50h50v50h50v-50h-50V50Zm0 0h50V0h-50v50Z' clip-rule='evenodd'/%3E%3C/g%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h150v150H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
-    
-      @media (min-width: 768px) {
-      transform: translate(56%, 0);
-    }
-    }
 
-  
+      @media (min-width: 768px) {
+        transform: translate(56%, 0);
+      }
+    }
   }
 
   & > li:nth-of-type(3) {

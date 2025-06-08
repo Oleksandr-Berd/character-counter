@@ -12,4 +12,15 @@ export const AppStyled = styled.div`
     padding-left: 32px;
     padding-right: 32px;
   }
+
+  @media (min-width: 1280px){
+  width: 992px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-bottom: 64px;
+  padding-left: 0;
+  padding-right: 0;
+  }
 `;
